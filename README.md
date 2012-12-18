@@ -1,0 +1,4 @@
+galaxy-creator
+==============
+
+Generates galaxies
