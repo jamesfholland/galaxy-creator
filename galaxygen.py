@@ -1,11 +1,9 @@
 import math
 import random
-
-totalStars = 10000
+totalStars = 500000
 numSpiralStars = totalStars/2
 numInnerStars = totalStars/4
 numAmbientStars = totalStars/4
-
 #Barred Spiral constants used in all passes - Real pain to change
 A = 1.0
 B = 0.25
@@ -42,9 +40,41 @@ for s in range(numSpiralStars):
 #        print x, -y
     else:
         print -x, -y
+#Inner core
+for s in range(numInnerStars/8):
+    t = 2*math.pi*random.random()
+    u = random.random()+random.random()
+    if u > 1:
+        r = 2-u
+    else:
+        r = u
+    print r*math.cos(t)*10000, r*math.sin(t)*10000
 
-#Inner core - Makes a smaller "galaxy" to fill in center
-width = 0.9
+for s in range(numInnerStars/4):
+    t = 2*math.pi*random.random()
+    u = random.random()+random.random()
+    if u > 1:
+        r = 2-u
+    else:
+        r = u
+    print r*math.cos(t)*25000, r*math.sin(t)*25000
+for s in range(numInnerStars/8*3):
+    t = 2*math.pi*random.random()
+    u = random.random()+random.random()
+    if u > 1:
+        r = 2-u
+    else:
+        r = u
+    print r*math.cos(t)*15000, r*math.sin(t)*15000
+for s in range(numInnerStars/4):
+    t = 2*math.pi*random.random()
+    u = random.random()+random.random()
+    if u > 1:
+        r = 2-u
+    else:
+        r = u
+    print r*math.cos(t)*20000, r*math.sin(t)*20000
+"""width = 0.9
 increment = length*math.pi/numInnerStars
 t = 0
 for i in range(numInnerStars):
@@ -65,14 +95,14 @@ for i in range(numInnerStars):
         print x, -y
     else:
         print -x, -y
-
+"""
 #Ambient Stars - Passes over original spiral with a wider less dense spiral
 #Longer spiral adds some fade out like real galaxies have
 length = 2.6
 width = 1.1
 increment = length*math.pi/numAmbientStars
 t = 0
-for s in range(numAmbientStars):
+for s in range(numAmbientStars/8*5):
     t = t+increment
     tan = B * math.tan(t / (2*N))
     x = (A * math.cos(t)) / (math.log(math.fabs(tan)))
@@ -82,11 +112,27 @@ for s in range(numAmbientStars):
     y = y + width*y*(random.random() - 0.5)
     y = y * 100000
     r = random.random()
-    if r < 0.25:
+    if r < 0.5:
         print x, y
-    elif r < 0.5:
-        print -x, y
-    elif r < 0.75:
-        print x, -y
+#    elif r < 0.5:
+#        print -x, y
+#    elif r < 0.75:
+#        print x, -y
     else:
         print -x, -y
+for s in range(numAmbientStars/4):
+    t = 2*math.pi*random.random()
+    u = random.random()+random.random()
+    if u > 1:
+        r = 2-u
+    else:
+        r = u
+    print r*math.cos(t)*100000, r*math.sin(t)*90000
+for s in range(numAmbientStars/8):
+    t = 2*math.pi*random.random()
+    u = random.random()+random.random()
+    if u > 1:
+        r = 2-u
+    else:
+        r = u
+    print r*math.cos(t)*120000, r*math.sin(t)*90000
