@@ -1,2 +1,4 @@
 stars
 *.swp
+.RData
+.Rhistory
