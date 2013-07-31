@@ -1,9 +1,10 @@
 galaxy-creator
 ==============
 Author: James Holland
+Email: jamesfholland@gmail.com
 Copyright 2012
 License:
-Not sure which one yet.
+Not sure which one yet, email me if you want to use it for anything
 
 Citations:
 Equation for barred spiral galaxy is based on the formula found in:
